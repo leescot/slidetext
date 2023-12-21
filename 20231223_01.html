@@ -6,18 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>請複製以下文字，丟給 ChatGPT App 內問它:</h3><br>
-    <h1>請從成語故事中選一個故事來解釋實證醫學的「NNT」。請依照下列順序寫出: 故事名稱、故事出處、用故事情節來解釋。</h1>
     <div style="text-align: center;">
+        <h3>第一步 - 按扭複製以下文字</h3>
         <button id="copyButton" style="font-size: 24px; padding: 10px 20px; background-color: black; color: yellow;">複製文字</button>
     </div>
+    
+    <h2>請從成語故事中選一個故事來解釋實證醫學的「NNT」。請依照下列順序寫出: 故事名稱、故事出處、用故事情節來解釋。</h2>
+
     <textarea id="copyText" style="display: none;">請從成語故事中選一個故事來解釋實證醫學的「NNT」。請依照下列順序寫出: 故事名稱、故事出處、用故事情節來解釋。</textarea>
-    <br><br><br><br>
+    <br><br>
+        <div style="text-align: center;">
+        <h3>第二步 - 開啟 ChatGPT APP，把複製的文字貼上問它</h3>
+        <button id="openChatGPT" style="font-size: 24px; padding: 10px 20px; background-color: black; color: yellow;">開啟 ChatGPT App</button>
+
+    </div>
+    <br><br>
 
     <a href="chatgpt://" class="button">開啟 ChatGPT App</a>
 
     <div style="text-align: center;">
-        <h3>答案產出後，請把四個字的成語，到以下 slido 頁面輸入:</h3>
+        <h3>第三步: 答案產出後，請把四個字的成語，到以下 slido 頁面輸入:</h3>
         <h1><a href="https://app.sli.do/event/i3ph5b0h">Slido連結點此</a></h1>
     </div>
 </body>
@@ -30,5 +38,8 @@ document.getElementById("copyButton").addEventListener("click", function() {
     document.execCommand("copy");  // 執行複製操作
     copyText.style.display = "none"; // 再次隱藏 textarea
     alert("已複製文字: " + copyText.value);  // 顯示複製成功訊息
+});
+document.getElementById("openChatGPT").addEventListener("click", function() {
+    window.location.href = 'chatgpt://'; // 假設 'chatgpt://' 是 ChatGPT app 的 URL scheme
 });
 </script>
